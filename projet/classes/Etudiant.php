@@ -1,7 +1,7 @@
 <?php
 
 
-class Etudiant
+class Etudiant extends ClasseGenerique
 {
   private $_prenom;
   private $_nom;
@@ -12,15 +12,15 @@ class Etudiant
   //CONSTRUCTEUR 
   public function __construct(array $data = null)
   {
+    parent::__construct($data);
     SELF::$_nombreObjetsCrees++;
-    if ($data) :
-      $this->hydrater($data);
-    endif;
+
   }
 
   //DESTRUCTEUR 
   public function __destruct()
   {
+    // parent::__destruct();
     SELF::$_nombreObjetsCrees--;
   }
 
