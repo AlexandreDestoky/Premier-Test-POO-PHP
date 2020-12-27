@@ -34,11 +34,31 @@ $etudiant3 = new Etudiant([
 
 
 
-//Utilisation de l'objet
+//Utilisation de l'objet Etudiant
 echo $etudiant1->getPrenom();
 echo "<br>";
 echo $etudiant2->getPrenom();
 echo "<br>";
 echo $etudiant3->getPrenom();
 echo "<br>";
+echo Etudiant::getNombreObjetsCrees();
 
+echo "<hr>";
+
+//Utilisation de l'objet Produit
+$produit1 = new Produit([
+  "nom"=> "une chausette",
+  "prixHTVA" => 8.9
+]);
+
+$produit2 = new Produit([
+  "nom"=> "une botte",
+  "prixHTVA" => 15.80,
+  "tva" => .06
+]);
+
+echo $produit1->getNom() . " : " . $produit1->getPrixTvac();
+echo "<br>";
+echo $produit2->getNom() . " : " . $produit2->getPrixTvac();
+echo "<br>";
+echo $produit2->getTva();
